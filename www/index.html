@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Check-list Industrial</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+
+    <div id="custom-splash">
+        <img src="splash/splash-image.png" alt="Splash Image">
+        <div class="loader" id="loader">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+    </div>
+
+    <!-- Login Container -->
+    <div id="loginContainer"> 
+        <i class="bi bi-person"></i>
+        <form id="loginForm">
+            <h2 id="entrar">Sign In</h2> 
+            <div class="input-containerr">
+                <input type="text" id="name" class="industrial-input" placeholder="           Username">
+                <i id="user" class="bi bi-person-fill"></i>
+              </div>
+              <div class="input-containerr">
+                <input type="password" id="matricula" class="industrial-input" placeholder="             Matrícula">
+                <i id="lock" class="bi bi-lock-fill"></i>
+                <button type="button" id="showMatricula"><i class="bi bi-eye"></i></button>
+              </div>
+                   <button type="submit" id="botlog">Login</button>
+        </form>
+    </div> 
+
+    <div>
+        <div id="turnoSeriesContainer"  class="container" style="display: none;">
+            <div id="new">
+                <div class="linha">
+                    <h2 id="userGreeting"></h2>
+                    <button id="exibirHistoricosBtn" class="industrial-button actions">Exibir Históricos</button>
+                </div>
+                <form id="turnoSeriesForm">
+                    <label for="turno">Selecione o Turno:</label>
+                    <select id="turno" class="industrial-select">
+                        <option value="Turno A">Turno A</option>
+                        <option value="Turno B">Turno B</option>
+                        <option value="Turno C">Turno C</option>
+                    </select>
+                    <label for="series">Qr-code do Equipamento:</label>
+                    <input type="text" id="series" >
+                    <button type="button" id="openScannerBtn"><i class="bi bi-qr-code-scan"></i></button>
+                    <label class="tag">Ler Qr-code</label>
+            </div>
+            <div id="barcodeScanner" style="display: none;">
+                <video id="barcodeVideo" width="100%" height="100%" style="background: #000;"></video>
+                <button id="closeScannerBtn" style="display: none;"><i class="bi bi-x-circle"></i></button>
+                <div class="scanner"></div>
+                <div class="instrucoes">
+                    <p id="cam"><i class="bi bi-camera"></i></p>Aponte a câmera para o Qr-code do equipamento
+                </div>
+                <div class="overlay"></div>
+            </div>
+            <div id="new1">
+                <div class="actions">
+                  <button type="submit" id="iniciar" class="industrial-button">Iniciar Check-list</button>
+                </div>
+                </form>
+                <div id="seriesRespondidosContainer" style="display: none;">
+                    <h2 id="txt">Concluídos</h2>
+                    <ul id="seriesRespondidosList"></ul>
+                </div>
+                <div class="actions">
+                    <button id="finalizarBtn" class="industrial-button">Finalizar</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Questionario Container -->
+        <div id="questionarioContainer"  class="container"  style="display: none;"></div>
+
+        <!-- Resultados Container -->
+        <div id="resultadosContainer"  class="container"  style="display: none;">
+            <h2>Resultados Finais</h2>
+            <div id="resultadosList"></div>
+            <div class="actions">
+                <button id="sendResultsBtn" class="industrial-button">Enviar Relatório</button>
+                <button id="backToTurnoBtn" class="industrial-button">Voltar</button>
+            </div>
+        </div>
+
+        <!-- Historico Container -->
+        <div id="historicoContainer"  class="container"  style="display: none;">
+            <h2>Histórico de Check-list</h2>
+            <ul id="historicoList"></ul>
+            <div class="actions">
+                <button id="apagarSelecionadosBtn" class="industrial-button" style="display: none;">Apagar
+                    Selecionados</button>
+                <button id="apagarHistoricoBtn" class="industrial-button" style="display: none;">Apagar Todo o
+                    Histórico</button>
+                <button id="backToTurnoBtn2" class="industrial-button">Voltar</button>
+            </div>
+        </div>
+
+        <!-- Historico Detail Container -->
+        <div id="historicoDetailContainer"  class="container"  style="display: none;">
+            <h2>Detalhes do Histórico</h2>
+            <div id="historicoDetailContent"></div>
+            <div class="actions">
+                <button id="backToHistoricoBtn" class="industrial-button">Voltar</button>
+            </div>
+        </div>
+    </div>
+
+     <!-- Ícone de Carregamento -->
+     <div id="loadingIcon" class="loading-icon" style="display: none;">
+        <div class="spinner"></div>
+    </div>
+
+    <div id="progressBarContainer" class="progress-bar-container" style="display: none;">
+        <div id="progressBar" class="progress-bar"></div>
+    </div>
+
+    <div id="notification" class="notification" style="display: none;">
+        Históricos apagados com sucesso.
+    </div>
+
+    <script src="js/index.js"></script>
+</body>
+
+</html>

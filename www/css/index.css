@@ -1,0 +1,501 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #3d3737;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+.tag {
+    font-size: 12px;
+    margin-top: 3px;
+}
+
+#openScannerBtn{
+    background: none;
+    color: white;
+    border: none;
+    font-size: 35px;
+    height: 40px;
+    width: 40px;
+    margin-left: 13px;
+    margin-top: 3px;
+    cursor: pointer;
+}
+
+#barcodeScanner {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.scanner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 57%;
+    height: 30px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px);
+    animation: scan 2s infinite;
+    left: 22%;
+}
+
+#cam {
+    position: absolute;
+    top: -47px;
+    left: 175px;
+    font-size: 26px;
+}
+
+.instrucoes{
+    position: absolute;
+    top: 130px;
+    left: 15px;
+    color: white;
+    font-size: 17px;
+    padding: 10px;
+    z-index: 3;
+    text-align: center;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(x);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.overlay::before {
+    content: '';
+    position: absolute;
+    top: 33%;
+    left: 20%;
+    width: 60%;
+    height: 30%;
+    border: 2px solid white;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    z-index: 2;
+    pointer-events: none;
+}
+
+@keyframes scan {
+    0% { top: 35%;}
+    50% { top: calc(65% - 50px); }
+    100% { top: 35%;}
+}
+
+#closeScannerBtn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 35px;
+}
+
+.edit-button{
+    border: 10px;
+    padding: 3px;
+    line-height: 5px;
+    margin: 3px;
+    font-size: 7px
+  }
+
+  #questionnaireForm {
+    display: none;
+}
+ 
+  #entrar{
+    text-align: center;
+    font-size: 35px;
+  }
+  
+  #botlog{
+    width: calc(100% - 20px);
+    text-align: center;
+    font-weight: 500;
+    height: 50px;
+    background-color: #ff7300;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 22px;
+    cursor: pointer;
+    border-radius: 8px;
+    margin-top: 10px;
+  }
+  
+  .container {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: #4b4949;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+  }
+
+  #name {
+    border-radius: 8px;
+    height: 45px;
+  }
+
+  #matricula {
+    border-radius: 8px;
+    margin-top: 10px;
+    height: 45px;
+  }
+
+  #loginContainer {
+      max-width: 340px;
+      margin: 100px auto;
+      padding: 20px;
+      background-color: #4b4949;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 20px;
+      width: 340px;
+      height: 350px;
+      max-height: 350px;
+      text-align: center;
+  }
+
+  #loginForm {
+    position: relative;
+    top: -50px;
+  }
+
+  .bi-person {
+    font-size: 85px;
+    border: 8px solid #ff7300;
+    background-color: #ff7300;
+    opacity: 80%;
+    border-radius: 50%;
+    width: 95px;
+    position: relative;
+    top: -65px;
+  }
+
+  .input-containerr {
+    position: relative;
+    width: 350px; /* Ajuste conforme necessário */
+  }
+  
+  .input-containerr input {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .input-containerr .bi {
+    color: #817c75;
+    font-size: 23px;
+    position: absolute;
+    top: 50%;
+    left: 28px; /* Ajuste conforme necessário */
+    transform: translateY(-50%);
+    pointer-events: none; /* Permite clicar no input através do ícone */
+  }
+
+  .input-containerr button {
+    background: none;
+    border: none;
+    color: #817c75;
+    font-size: 24px;
+    position: absolute;
+    top: 50%;
+    right: 65px; /* Ajuste conforme necessário */
+    transform: translateY(-50%);
+    pointer-events: none; /* Permite clicar no input através do ícone */
+
+  }
+ 
+  .font-white {
+    color: white;
+  }
+
+  h2 {
+      margin-top: 0;
+      color: #ffffff;
+  }
+  
+  .linha {
+   display: flex ;
+  }
+
+  #txt{
+    margin-top: 20px;
+    font-size: 24px;
+  }
+  
+  #exibirHistoricosBtn {
+    font-size: 15px;
+    padding: 13px;
+    margin: 0px 0px 20px 105px;
+    line-height: 8px;
+    background-color: #ff7300;
+    color: #fff;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+  }
+  
+  #iniciar{
+    margin: 10px 110px 0px 0px;
+  }
+  
+  #finalizarBtn{
+       margin: 15px 0px 0px 95px
+  }
+  
+  label {
+      color: white;
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      padding: 2px;
+  }
+  
+  input[type="text"],
+  input[type="password"],
+  select,
+  textarea {
+      background-color: #cab9b1;
+      align-items: center;    
+      width: calc(100% - 35px);
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 15px;
+      box-sizing: border-box;
+      outline: #ff7300;
+  }
+
+  .hidden {
+    display: none;
+  }
+  
+  textarea {
+      height: 100px;
+  }
+  
+  .industrial-input,
+  .industrial-select,
+  .industrial-textarea {
+      font-size: 16px;
+  }
+  
+  .actions{
+    text-align: right;
+  }
+  
+  .industrial-button {
+      background-color: #ff7300;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 8px;
+      margin-left: 10px;
+  }
+  
+  .industrial-button:hover {
+      background-color: #ff7300;
+  }
+  
+  #historicoList {
+      list-style-type: none;
+      padding: 0;
+  }
+  
+  #historicoList li {
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+      cursor: pointer;
+  }
+  
+  #historicoList li:hover {
+      background-color: #7e7575;
+  }
+  
+  .serial-number {
+      background-color: #555;
+      color: #fff;
+      padding: 10px;
+      font-weight: bold;
+      margin-top: 10px;
+  }
+  
+  .response-row {
+      display: grid;
+      grid-template-columns: 70% 10% 10% 10%;
+      border-bottom: 1px solid #ddd;
+  }
+  
+  .response-question {
+      padding: 10px;
+      background-color: #4b4949;
+  }
+  
+  .response-good,
+  .response-alert,
+  .response-critical {
+      padding: 10px;
+      text-align: center;
+      margin: auto;
+      vertical-align: center; 
+  }
+  
+  .response-problem {
+      padding: 10px;
+      background-color: #817c75;
+      margin: 0;
+  }
+  
+  .txt2{
+      margin-top: 15px;
+  }
+
+  #backToHistoricoBtn, #backToTurnoBtn2 {
+    margin-top: 10px;
+  }
+
+.loading-icon {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 5px solid rgba(0, 0, 0, 0.1);
+    border-top: 5px solid #000;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.container {
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.container.active {
+    opacity: 1;
+}
+
+.progress-bar-container {
+    width: 50%;
+    height: 5px;
+    background-color: #000;
+    border-radius: 2.5px;
+    margin: 0 auto;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+}
+
+.progress-bar {
+    width: 0;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 2.5px;
+}
+
+.notification {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ff7300;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    z-index: 1001;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    font-size: 16px;
+}
+
+#custom-splash {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000; /* Fallback color */
+    z-index: 9999;
+    flex-direction: column;
+    opacity: 1;
+    transition: opacity 1s ease-out; /* Adiciona transição suave */
+}
+
+#custom-splash img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.loader {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 250px;
+    gap: 8px;
+    padding: 1px;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.2); opacity: 0.7; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* Adiciona um atraso na animação para cada ponto */
+.dot:nth-child(1) { animation-delay: 0s; }
+.dot:nth-child(2) { animation-delay: 0.1s; }
+.dot:nth-child(3) { animation-delay: 0.2s; }
+.dot:nth-child(4) { animation-delay: 0.3s; }
+.dot:nth-child(5) { animation-delay: 0.4s; }
+.dot:nth-child(6) { animation-delay: 0.5s; }
